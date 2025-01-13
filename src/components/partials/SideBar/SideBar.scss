@@ -1,0 +1,14 @@
+.sidebar-link{
+    @apply px-[0.8rem] py-[1.2rem];
+  &.active {
+    @apply text-dark;
+    svg path {
+      @apply stroke-dark;
+    }
+  }
+  &:hover {
+    svg path {
+      @apply stroke-dark;
+    }
+  }
+}

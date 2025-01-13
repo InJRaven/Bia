@@ -1,0 +1,13 @@
+.list-products {
+  @apply grid grid-cols-4 gap-[2.5rem];
+  .card {
+    @apply rounded-[0.6rem] hover:scale-[1.03];
+
+    &__img {
+      @apply rounded-t-[0.6rem];
+      img {
+        @apply rounded-t-[0.6rem];
+      }
+    }
+  }
+}
