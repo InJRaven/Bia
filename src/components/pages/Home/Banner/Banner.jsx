@@ -11,7 +11,7 @@ import { Autoplay, Pagination } from "swiper/modules";
 const Banner = () => {
   const slides = [img1, img2, img3];
   return (
-    <section className="w-full h-[70vh] relative banner">
+    <section className="w-full aspect-video relative banner">
       <div className="slide-show w-full h-full">
         <Swiper
           spaceBetween={0} // Space between slides
@@ -27,7 +27,7 @@ const Banner = () => {
               <img
                 src={slide}
                 alt={`Slide ${index + 1}`}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover as"
               />
             </SwiperSlide>
           ))}

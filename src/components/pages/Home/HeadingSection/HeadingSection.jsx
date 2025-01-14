@@ -6,7 +6,7 @@ const HeadingSection = ({ title }) => {
       <h3 className="w-full text-dark text-md font-semibold text-center">
         DARIUS PHAN
       </h3>
-      <h1 className="text-display-sm text-dark text-center font-bold">
+      <h1 className="text-display-sm text-dark text-center font-bold uppercase">
         {title}
       </h1>
       <div className="w-full flex items-center justify-center gap-[0.8rem]">

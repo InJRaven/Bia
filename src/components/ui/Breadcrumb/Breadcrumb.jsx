@@ -1,10 +1,11 @@
-import { useMemo } from "react";
+import { useContext, useMemo } from "react";
 import { NavLink, useLocation } from "react-router-dom";
+import { TranslationContext } from "../../../context/TranslationContext";
 
 const Breadcrumb = ({ routes, hidden }) => {
   const location = useLocation();
   const pathnames = location.pathname.split("/").filter((route) => route);
-
+  const { language } = useContext(TranslationContext);
   const findRoute = (routes, currentPath) => {
     for (let route of routes) {
       if (`/${route.path}` === currentPath) {
@@ -39,44 +40,13 @@ const Breadcrumb = ({ routes, hidden }) => {
 
     return { breadcrumbs: breadcrumbList, pageTitle: title };
   }, [location.pathname, routes]);
-
-  if (hidden === 'heading') {
-    return null;  // If 'hidden' is 'heading', we don't render the section
-  }
-  if (hidden === 'title'){
-    return (
-      <section className="w-full flex flex-col gap-[0.5rem] py-[2rem] heading">
-      <nav className="breadcrumb" aria-label="Breadcrumb">
-        <ol className="inline-flex items-center justify-start gap-[0.6rem] breadcrumb__menu">
-          <li className="breadcrumb__menu--item">
-            <NavLink to="/" className="breadcrumb__menu--link">
-              Trang Chủ
-            </NavLink>
-          </li>
-          {breadcrumbs.map((item) => (
-            <li className="gap-[0.6rem] breadcrumb__menu--item" key={item.path}>
-              <span className="flex items-center justify-center text-xs font-bold text-gray-700 icon">
-                <i className="ki-duotone ki-right" />
-              </span>
-              <NavLink to={item.path} className="breadcrumb__menu--link">
-                {item.name}
-              </NavLink>
-            </li>
-          ))}
-        </ol>
-      </nav>
-    </section>
-    )
-  }
   return (
-    <section className="w-full flex flex-col gap-[0.5rem] py-[2rem] heading">
-      <h1 className="text-display-md font-bold title">{pageTitle}</h1>
-      {hidden !== 'breadcrumb'}
-      <nav className="breadcrumb" aria-label="Breadcrumb">
+    <section className="rol-start-2 grid grid-cols-6 gap-[4rem] py-[2rem] bg-[#F0F0F1] heading ">
+      <nav className="col-start-2 col-span-4 px-[2rem] gap breadcrumb" aria-label="Breadcrumb">
         <ol className="inline-flex items-center justify-start gap-[0.6rem] breadcrumb__menu">
           <li className="breadcrumb__menu--item">
-            <NavLink to="/" className="breadcrumb__menu--link">
-              Trang Chủ
+            <NavLink to="/" className=" !text-md breadcrumb__menu--link">
+              {language === "vi" ? "Trang Chủ" : "Home"}
             </NavLink>
           </li>
           {breadcrumbs.map((item) => (
@@ -84,7 +54,7 @@ const Breadcrumb = ({ routes, hidden }) => {
               <span className="flex items-center justify-center text-xs font-bold text-gray-700 icon">
                 <i className="ki-duotone ki-right" />
               </span>
-              <NavLink to={item.path} className="breadcrumb__menu--link">
+              <NavLink to={item.path} className="!text-md breadcrumb__menu--link">
                 {item.name}
               </NavLink>
             </li>

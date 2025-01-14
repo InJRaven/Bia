@@ -13,3 +13,7 @@ body {
 #root{
     height: 100%;
 }
+
+input, section, option,{
+  @apply font-sans;
+}

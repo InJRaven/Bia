@@ -1,60 +1,64 @@
+import { useContext } from "react";
 import {
   FacebookIcon,
   MessageIcon,
   PhoneIcon,
   YoutubeIcon,
 } from "../../ui/Icon/Icon";
+import { TranslationContext } from "../../../context/TranslationContext";
 
 const Footer = () => {
+  const { language, t } = useContext(TranslationContext);
+
+  const company = t("footer.company")
+  const introduction = t("footer.introduction")
+
   return (
     <footer className="footer">
       <div className="footer__container">
         <div className="footer__container--item">
           <h4 className="text-lg text-light font-bold title">
-            Công ty TNHH KINKIN DECOR
+            {company.name}
           </h4>
           <div className="flex flex-col gap-[1rem] information">
             <p className="text-gray-500 text-md break-words">
-              <span className="text-light font-bold">Địa Chỉ:</span> Số 19 Ngõ
-              68 Phố Lưu Hữu Phước, Cầu Diễn, Nam Từ Liêm, Hà Nội
+              <span className="text-light font-bold">{language === 'vi' ? 'Địa Chỉ:' : 'Address:'}</span> {company.address}
             </p>
             <p className="text-gray-500 text-md break-words">
-              <span className="text-light font-bold">Xưởng SX:</span> Số 19 Ngõ
-              68 Phố Lưu Hữu Phước, Cầu Diễn, Nam Từ Liêm, Hà Nội
+              <span className="text-light font-bold">{language === 'vi' ? 'Xưởng SX:' : 'Factory:'}</span> {company.factory}
             </p>
             <p className="text-gray-500 text-md break-words">
-              <span className="text-light font-bold">Điện thoại:</span> 097 955
-              xx xx
+              <span className="text-light font-bold">{language === 'vi' ? 'Điện thoại:' : 'Phone Number:'}</span> {company.phoneNumber}
             </p>
             <p className="text-gray-500 text-md break-words">
               <span className="text-light font-bold">Email:</span>{" "}
-              toan.dm@webdemo.com
+              {company.email}
             </p>
             <p className="text-gray-500 text-md break-words">
-              <span className="text-light font-bold">Thời gian làm việc:</span>{" "}
-              8:00h - 18h:00(T2-T7)
+              <span className="text-light font-bold">{language === 'vi' ? 'Thời gian làm việc:' : 'Working:'}</span>{" "}
+              {company.working}
             </p>
             <p className="text-gray-500 text-md break-words">
-              <span className="text-light font-bold">Website:</span> webdemo.com
+              <span className="text-light font-bold">Website:</span>{" "}{company.website}
             </p>
           </div>
         </div>
 
         <div className="footer__container--item px-[7rem]">
           <h4 className="text-lg text-light font-bold title grid grid-cols-1">
-            Giới thiệu
+            {introduction.title}
           </h4>
           <div className="flex flex-col gap-[1rem] information">
-            <p className="text-gray-500 text-md break-words">Sáng lập</p>
-            <p className="text-gray-500 text-md break-words">Xưởng sản xuất</p>
-            <p className="text-gray-500 text-md break-words">Nhân sự công ty</p>
+            <p className="text-gray-500 text-md break-words">{introduction.founder}</p>
+            <p className="text-gray-500 text-md break-words">{introduction.workshop}</p>
+            <p className="text-gray-500 text-md break-words">{introduction.personal}</p>
             <p className="text-gray-500 text-md break-words">
-              Tuyển dụng nhân sự
+              {introduction.recruitment}
             </p>
             <p className="text-gray-500 text-md break-words">
-              Quy trình làm việc
+              {introduction.process}
             </p>
-            <p className="text-gray-500 text-md break-words">Kênh Youtube</p>
+            <p className="text-gray-500 text-md break-words">{introduction.channel}</p>
             <div className="social">
               <span className="w-[3.2rem] h-[3.2rem] rounded-[5rem] flex items-center justify-center bg-blue-500">
                 <FacebookIcon />
@@ -74,19 +78,19 @@ const Footer = () => {
 
         <div className="footer__container--item px-[7rem]">
           <h4 className="text-lg text-light font-bold title grid grid-cols-1">
-            Giới thiệu
+            {introduction.title}
           </h4>
           <div className="flex flex-col gap-[1rem] information">
-            <p className="text-gray-500 text-md break-words">Sáng lập</p>
-            <p className="text-gray-500 text-md break-words">Xưởng sản xuất</p>
-            <p className="text-gray-500 text-md break-words">Nhân sự công ty</p>
+            <p className="text-gray-500 text-md break-words">{introduction.founder}</p>
+            <p className="text-gray-500 text-md break-words">{introduction.workshop}</p>
+            <p className="text-gray-500 text-md break-words">{introduction.personal}</p>
             <p className="text-gray-500 text-md break-words">
-              Tuyển dụng nhân sự
+              {introduction.recruitment}
             </p>
             <p className="text-gray-500 text-md break-words">
-              Quy trình làm việc
+              {introduction.process}
             </p>
-            <p className="text-gray-500 text-md break-words">Kênh Youtube</p>
+            <p className="text-gray-500 text-md break-words">{introduction.channel}</p>
             <div className="social">
               <span className="w-[3.2rem] h-[3.2rem] rounded-[5rem] flex items-center justify-center bg-blue-500">
                 <FacebookIcon />

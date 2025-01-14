@@ -5,20 +5,25 @@ import Service from "../components/pages/Service/Service";
 import Gallery from "../components/pages/Gallery/Gallery";
 import Contact from "../components/pages/Contact/Contact";
 import Detail from "../components/pages/Detail/Detail";
+import { useContext } from "react";
+import { TranslationContext } from "../context/TranslationContext";
 
-const AppRoutesConfig = [
-  {
-    path: "/",
-    name: "Trang Chủ",
-    element: <MainLayout />,
-    children: [
-      { path: "", name: "Trang Chủ", element: <Home /> },
-      { path: "products", name: "Sản Phẩm", element: <ListProducts /> },
-      { path: "service", name: "Dịch Vụ", element: <Service /> },
-      { path: "gallery", name: "Phòng Trưng Bày", element: <Gallery /> },
-      { path: "contact", name: "Liên hệ", element: <Contact /> },
-      { path: "detail", name: "Thông Tin Sản Phẩm", element: <Detail /> },
-    ],
-  },
-];
+const AppRoutesConfig = () => {
+  const {t} = useContext(TranslationContext)
+  return [
+    {
+      path: "/",
+      name: t("header.item1"),
+      element: <MainLayout />,
+      children: [
+        { path: "", name: t("header.item1"), element: <Home /> },
+        { path: "products", name: t("header.item2"), element: <ListProducts /> },
+        { path: "service", name: t("header.item3"), element: <Service /> },
+        { path: "gallery", name: t("header.item5"), element: <Gallery /> },
+        { path: "contact", name: t("header.item6"), element: <Contact /> },
+        { path: "detail", name: t("header.item4"), element: <Detail /> },
+      ],
+    },
+  ];
+}
 export { AppRoutesConfig };

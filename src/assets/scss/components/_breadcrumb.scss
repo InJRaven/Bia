@@ -1,7 +1,7 @@
 .breadcrumb{
     .breadcrumb__menu{
         &--item{
-            @apply inline-flex items-center;
+            @apply inline-flex items-center justify-center;
             &:last-child{
                 span.icon{
                     @apply text-gray-900;

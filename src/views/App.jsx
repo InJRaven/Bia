@@ -3,8 +3,10 @@ import { useRoutes } from "react-router-dom";
 import { AppRoutesConfig } from "../routes/AppRoutes";
 import ScrollToTop from "../utils/ScrollToTop";
 
+
 function App() {
-  const routes = useRoutes([...AppRoutesConfig]);
+
+  const routes = useRoutes(AppRoutesConfig());
 
   return (
     <>
