@@ -8,7 +8,7 @@ import preview2 from "../../../assets/img/detail/2.webp";
 import preview3 from "../../../assets/img/detail/3.webp";
 import preview4 from "../../../assets/img/detail/4.webp";
 import preview5 from "../../../assets/img/detail/5.webp";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { TranslationContext } from "../../../context/TranslationContext";
 
 const Detail = () => {
@@ -46,46 +46,41 @@ const Detail = () => {
       price: product.price,
     },
   ];
+
+  const img = [preview1, preview2, preview3, preview5];
+  const [selectedPreview, setSelectedPreview] = useState(img[0]);
+  const handlePreviewClick = (previewUrl) => {
+    setSelectedPreview(previewUrl);
+  };
   return (
     <>
       <section className="grid grid-cols-[_0.9fr_0.75fr] gap-[3rem] product">
         <div className="col-span-1 row-span-1 flex flex-col gap-[1rem] product__preview">
           <div className="w-full aspect-square bg-gray-500 product__img">
             <img
-              src={preview1}
+              src={selectedPreview}
               alt=""
               className="w-full h-full aspect-square object-cover"
             />
           </div>
           <div className="w-full aspect-[16/3] grid grid-cols-4 gap-[1rem] group__img">
-            <div className="w-full aspect-square bg-gray-500 group__img--item">
-              <img
-                src={preview2}
-                alt=""
-                className="w-full h-full aspect-square object-cover"
-              />
-            </div>
-            <div className="w-full aspect-square bg-gray-500 group__img--item">
-              <img
-                src={preview3}
-                alt=""
-                className="w-full h-full aspect-square object-cover"
-              />
-            </div>
-            <div className="w-full aspect-square bg-gray-500 group__img--item">
-              <img
-                src={preview4}
-                alt=""
-                className="w-full h-full aspect-square object-cover"
-              />
-            </div>
-            <div className=" w-full aspect-square bg-gray-500 group__img--item">
-              <img
-                src={preview5}
-                alt=""
-                className="w-full h-full aspect-square object-cover"
-              />
-            </div>
+            {img.map((item, index) => (
+              <div
+                className={`w-full aspect-square bg-gray-500 transition duration-200 border-[3px] ${
+                  selectedPreview === item
+                    ? "border-red-400"
+                    : "border-transparent"
+                } group__img--item`}
+                key={index}
+                onClick={() => handlePreviewClick(item)}
+              >
+                <img
+                  src={item}
+                  alt=""
+                  className="w-full h-full aspect-square object-cover"
+                />
+              </div>
+            ))}
           </div>
         </div>
 
