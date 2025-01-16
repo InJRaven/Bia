@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ["Inter", "sans-serif"],
+        apple: ["San Francisco", "sans-serif"],
         "ki-duotone": "ki-duotone",
         "ki-filled": "ki-filled",
         "ki-outline": "ki-outline",
