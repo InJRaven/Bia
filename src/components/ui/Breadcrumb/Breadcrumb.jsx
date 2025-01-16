@@ -41,7 +41,7 @@ const Breadcrumb = ({ routes, hidden }) => {
     return { breadcrumbs: breadcrumbList, pageTitle: title };
   }, [location.pathname, routes]);
   return (
-    <section className="rol-start-2 grid grid-cols-6 gap-[4rem] py-[2rem] bg-[#F0F0F1] heading ">
+    <section className="rol-start-2 grid grid-cols-6 gap-[4rem] py-[2rem] bg-gray-200 heading ">
       <nav className="col-start-2 col-span-4 px-[2rem] gap breadcrumb" aria-label="Breadcrumb">
         <ol className="inline-flex items-center justify-start gap-[0.6rem] breadcrumb__menu">
           <li className="breadcrumb__menu--item">
