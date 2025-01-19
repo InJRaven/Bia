@@ -90,7 +90,7 @@ module.exports = {
             fontSize: "45%", // Khi màn hình nhỏ hơn 800px (1rem = 7.2px)
           },
         },
-        "@media (max-width: 640rem)": {
+        "@media (max-width: 64rem)": {
           html: {
             fontSize: "40%", // Khi màn hình nhỏ hơn 600px (1rem = 6px)
           },
