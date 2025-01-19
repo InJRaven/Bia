@@ -42,7 +42,7 @@ const Home = () => {
 
   return (
     <>
-      <div className="w-full col-start-2 col-span-4 flex flex-col items-center gap-[1.5rem] container">
+      <div className="w-full col-start-2 col-span-4 flex flex-col items-center container">
         <Banner />
         {title.map((item, index) => {
           console.log(item);
@@ -53,7 +53,7 @@ const Home = () => {
               typeButton="link"
               link="/products"
               textButton={t("button.all")}
-              iconButtonRight={<i className="ki-outline ki-arrow-right" />}
+              iconButtonRight={<i className="ki-filled ki-arrow-right" />}
               data={data}
             />
           );

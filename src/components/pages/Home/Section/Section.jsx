@@ -15,7 +15,7 @@ const Section = ({
   return (
     <section className="w-full flex flex-col items-center gap-[1rem] py-[2rem] section__container">
       <HeadingSection title={title} />
-      <div className="w-full grid grid-cols-4 gap-[2rem] p-[1.6rem] border border-gray-500 rounded-[0.6rem] relative list-card">
+      <div className="w-full grid grid-cols-4 xs:grid-cols-2 gap-[2rem] p-[1.6rem] border border-gray-500 rounded-[0.6rem] relative list-card">
         {data.map((item) => (
           <Link to='/detail' key={item.id}>
             <Card

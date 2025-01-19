@@ -59,12 +59,47 @@ module.exports = {
         card: "0px 6.5px 8.667px -2.167px rgba(10, 13, 18, 0.1), 0px 2.167px 3.25px -1.083px rgba(10, 13, 18, 0.1), 0px 1.083px 1.083px -0.542px rgba(10, 13, 18, 0.1)",
         button: "-2px 4px 7px 0px rgba(0, 0, 0, 0.25)",
       },
+      screens: {
+        xl: { max: "120rem" }, // => @media (max-width: 1200px) { ... }
+        lg: { max: "100rem" },
+        md: { max: "80rem" },
+        md: { max: "64rem" },
+        xs: { max: "45rem" },
+      },
     },
   },
   plugins: [
-    function ({ addBase }) {
+    function ({ addBase, theme }) {
+      // Lấy các giá trị font-size từ theme hoặc tự thiết lập giá trị font-size cho các breakpoint
       addBase({
-        html: { fontSize: "62.5%" }, // 1rem = 10px
+        html: {
+          fontSize: "62.5%", // Mặc định: 1rem = 10px
+        },
+        "@media (max-width: 120rem)": {
+          html: {
+            fontSize: "56.25%", // Khi màn hình nhỏ hơn 1200px (1rem = 9px)
+          },
+        },
+        "@media (max-width: 100rem)": {
+          html: {
+            fontSize: "50%", // Khi màn hình nhỏ hơn 1000px (1rem = 8px)
+          },
+        },
+        "@media (max-width: 80rem)": {
+          html: {
+            fontSize: "45%", // Khi màn hình nhỏ hơn 800px (1rem = 7.2px)
+          },
+        },
+        "@media (max-width: 640rem)": {
+          html: {
+            fontSize: "40%", // Khi màn hình nhỏ hơn 600px (1rem = 6px)
+          },
+        },
+        "@media (max-width: 45rem)": {
+          html: {
+            fontSize: "35%", // Khi màn hình nhỏ hơn 400px (1rem = 5px)
+          },
+        },
       });
     },
   ],

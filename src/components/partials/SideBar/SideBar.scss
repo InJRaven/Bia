@@ -1,5 +1,5 @@
 .sidebar-link{
-    @apply px-[2rem] py-[1rem];
+    @apply px-[2rem] xs:px-[0.5rem] py-[1rem];
     &:first-child{
       @apply rounded-t-[0.6rem];
     }

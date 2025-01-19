@@ -5,6 +5,7 @@ import { useContext } from "react";
 import { TranslationContext } from "../../../context/TranslationContext";
 
 import "./ListProducts.scss";
+
 const ListProducts = () => {
   const { language, t } = useContext(TranslationContext);
   const product = t("products.product");
@@ -107,7 +108,9 @@ const ListProducts = () => {
             name=""
             id=""
           >
-            <option value={language === "vi" ? "Tất Cả" : "All"}>{language === "vi" ? "Tất Cả" : "All"}</option>
+            <option value={language === "vi" ? "Tất Cả" : "All"}>
+              {language === "vi" ? "Tất Cả" : "All"}
+            </option>
 
             {values.map((item, index) => (
               <option key={index} value={item}>
@@ -125,9 +128,15 @@ const ListProducts = () => {
             name=""
             id=""
           >
-             <option value={language === "vi" ? "Tất Cả" : "All"}>{language === "vi" ? "Tất Cả" : "All"}</option>
-            <option value="desc">{language === "vi" ? "Từ Cao -> Thấp" : "High To Low"}</option>
-            <option value="asc">{language === "vi" ? "Từ Thấp -> Cao" : "Low To High"}</option>
+            <option value={language === "vi" ? "Tất Cả" : "All"}>
+              {language === "vi" ? "Tất Cả" : "All"}
+            </option>
+            <option value="desc">
+              {language === "vi" ? "Từ Cao -> Thấp" : "High To Low"}
+            </option>
+            <option value="asc">
+              {language === "vi" ? "Từ Thấp -> Cao" : "Low To High"}
+            </option>
           </select>
         </div>
       </div>

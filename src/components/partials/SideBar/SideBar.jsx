@@ -48,7 +48,7 @@ const SideBar = () => {
           key={index}
           to={item.to}
           target="_blank"
-          className="inline-flex w-full items-center justify-between text-md text-gray-600 font-semibold transition duration-200 hover:text-dark hover:bg-gray-200 sidebar-link"
+          className="inline-flex w-full items-center justify-between text-md xs:text-xs text-gray-600 font-semibold transition duration-200 hover:text-dark hover:bg-gray-200 sidebar-link"
         >
           {item.label}
           <ChevronRightIcon className="h-7 w-7 text-gray-600 transition duration-200" />

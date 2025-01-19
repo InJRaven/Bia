@@ -79,13 +79,14 @@ const ChevronRightIcon = ({ className }) => (
   </svg>
 );
 
-const Number8BiaIcon = () => (
+const Number8BiaIcon = ({className}) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="24"
     height="23"
     viewBox="0 0 24 23"
     fill="none"
+    className={className}
   >
     <path
       d="M12 20.5918C17.0558 20.5918 21.1543 16.4933 21.1543 11.4375C21.1543 6.38175 17.0558 2.28323 12 2.28323C6.94422 2.28323 2.8457 6.38175 2.8457 11.4375C2.8457 16.4933 6.94422 20.5918 12 20.5918Z"

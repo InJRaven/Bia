@@ -27,7 +27,7 @@ const MainLayout = () => {
         <Breadcrumb routes={AppRoutesConfig()} hidden={hiddenTitle} />
       )}
 
-      <div className="row-start-3 row-span-1 col-start-1 w-full grid grid-cols-6 gap-[2rem] px-[3.2rem] py-[2rem]">
+      <div className="row-start-3 row-span-1 col-start-1 w-full grid grid-cols-6 gap-[2rem] xs:gap-[1rem] px-[3.2rem] xs:px-[1rem] py-[2rem]">
         {isHomePage && <SideBar />}
         <main className="w-full col-start-2 col-span-4 flex flex-col gap-[2rem]">
           <Outlet />

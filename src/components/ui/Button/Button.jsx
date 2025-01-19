@@ -35,9 +35,9 @@ const Button = ({
         aria-disabled={disabled ? "true" : "false"}
         role="button"
       >
-        {iconLeft && <span className="icon-left">{iconLeft}</span>}
+        {iconLeft && <span className="flex items-center justify-center icon-left">{iconLeft}</span>}
         {text && <span className="btn-text">{text}</span>}
-        {iconRight && <span className="icon-right">{iconRight}</span>}
+        {iconRight && <span className="flex items-center justify-center icon-right">{iconRight}</span>}
       </Link>
     );
   }

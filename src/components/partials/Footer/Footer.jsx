@@ -44,7 +44,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="footer__container--item px-[7rem]">
+        <div className="footer__container--item px-[7rem] xs:px-[3rem]">
           <h4 className="text-lg text-light font-bold title grid grid-cols-1">
             {introduction.title}
           </h4>
@@ -76,7 +76,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="footer__container--item px-[7rem]">
+        <div className="footer__container--item px-[7rem] xs:px-[3rem]">
           <h4 className="text-lg text-light font-bold title grid grid-cols-1">
             {introduction.title}
           </h4>
