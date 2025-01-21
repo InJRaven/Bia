@@ -6,11 +6,9 @@ import { TranslationProvider } from "./context/TranslationContext.jsx";
 import "./assets/scss/index.scss";
 
 createRoot(document.getElementById("root")).render(
-  <StrictMode>
-    <TranslationProvider>
+  <TranslationProvider>
       <BrowserRouter>
         <App />
       </BrowserRouter>
     </TranslationProvider>
-  </StrictMode>
 );

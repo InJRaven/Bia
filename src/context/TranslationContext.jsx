@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useEffect, useCallback } from "react";
-import { translations } from "../utils/Translation";
+import { translations } from "../utils/Translation/Translation";
 
 export const TranslationContext = createContext();
 
