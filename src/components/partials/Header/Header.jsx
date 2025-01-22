@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
-import { TranslationContext } from "../../../context/TranslationContext"; // Adjust the import path
-import { US, VN } from 'country-flag-icons/react/3x2'
+import { US, VN } from "country-flag-icons/react/3x2";
+import { AppContext } from "../../../context/AppContext";
 const Header = () => {
-  const { language, changeLanguage, t } = useContext(TranslationContext);
+  const { language, changeLanguage, t } = useContext(AppContext);
   const menuItems = [
     { to: "/", label: t("header.item1") },
     { to: "/products", label: t("header.item2") },
@@ -41,12 +41,18 @@ const Header = () => {
           >
             {language === "vi" ? (
               <span className="inline-flex gap-[0.5rem] items-center">
-                <VN title="Vietnamese" className="h-[2rem] w-[2rem] xs:h-[1.5rem] xs:w-[1.5rem]" />
+                <VN
+                  title="Vietnamese"
+                  className="h-[2rem] w-[2rem] xs:h-[1.5rem] xs:w-[1.5rem]"
+                />
                 Vietnamese
               </span>
             ) : (
               <span className="inline-flex gap-[0.5rem] items-center">
-                <US title="United States" className="h-[2rem] w-[2rem] xs:h-[1.5rem] xs:w-[1.5rem]" />
+                <US
+                  title="United States"
+                  className="h-[2rem] w-[2rem] xs:h-[1.5rem] xs:w-[1.5rem]"
+                />
                 English
               </span>
             )}

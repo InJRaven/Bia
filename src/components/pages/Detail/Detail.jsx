@@ -1,3 +1,4 @@
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Detail.scss";
 import Card from "../../ui/Card/Card";
@@ -8,11 +9,10 @@ import preview2 from "../../../assets/img/detail/2.webp";
 import preview3 from "../../../assets/img/detail/3.webp";
 import preview4 from "../../../assets/img/detail/4.webp";
 import preview5 from "../../../assets/img/detail/5.webp";
-import { useContext, useState } from "react";
-import { TranslationContext } from "../../../context/TranslationContext";
+import { AppContext } from "../../../context/AppContext";
 
 const Detail = () => {
-  const { language, t } = useContext(TranslationContext);
+  const { language, t } = useContext(AppContext);
   const detail = t("products.detail");
   const product = t("products.product");
 

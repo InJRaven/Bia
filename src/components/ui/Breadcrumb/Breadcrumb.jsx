@@ -1,11 +1,11 @@
 import { useContext, useMemo } from "react";
 import { NavLink, useLocation } from "react-router-dom";
-import { TranslationContext } from "../../../context/TranslationContext";
+import { AppContext } from "../../../context/AppContext";
 
 const Breadcrumb = ({ routes, hidden }) => {
   const location = useLocation();
   const pathnames = location.pathname.split("/").filter((route) => route);
-  const { language } = useContext(TranslationContext);
+  const { language } = useContext(AppContext);
   const findRoute = (routes, currentPath) => {
     for (let route of routes) {
       if (`/${route.path}` === currentPath) {
@@ -42,7 +42,10 @@ const Breadcrumb = ({ routes, hidden }) => {
   }, [location.pathname, routes]);
   return (
     <section className="rol-start-2 grid grid-cols-6 gap-[4rem] py-[2rem] bg-gray-200 heading ">
-      <nav className="col-start-2 col-span-4 px-[2rem] gap breadcrumb" aria-label="Breadcrumb">
+      <nav
+        className="col-start-2 col-span-4 px-[2rem] gap breadcrumb"
+        aria-label="Breadcrumb"
+      >
         <ol className="inline-flex items-center justify-start gap-[0.6rem] breadcrumb__menu">
           <li className="breadcrumb__menu--item">
             <NavLink to="/" className=" !text-md breadcrumb__menu--link">
@@ -54,7 +57,10 @@ const Breadcrumb = ({ routes, hidden }) => {
               <span className="flex items-center justify-center text-xs font-bold text-gray-700 icon">
                 <i className="ki-duotone ki-right" />
               </span>
-              <NavLink to={item.path} className="!text-md breadcrumb__menu--link">
+              <NavLink
+                to={item.path}
+                className="!text-md breadcrumb__menu--link"
+              >
                 {item.name}
               </NavLink>
             </li>

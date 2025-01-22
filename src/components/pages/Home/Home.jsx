@@ -1,11 +1,11 @@
 import { useContext } from "react";
+import { AppContext } from "../../../context/AppContext";
 import Banner from "./Banner/Banner";
 import Section from "./Section/Section";
 import productImg from "../../../assets/img/product.png";
-import { TranslationContext } from "../../../context/TranslationContext";
 
 const Home = () => {
-  const { t } = useContext(TranslationContext);
+  const { t } = useContext(AppContext);
   const product = t("products.product");
   const title = t("products.title");
 

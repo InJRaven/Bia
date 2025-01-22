@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import { TranslationContext } from "../../../context/TranslationContext";
+import { AppContext } from "../../../context/AppContext";
 
 const Service = () => {
-  const { language } = useContext(TranslationContext);
+  const { language } = useContext(AppContext);
   return (
     <>
       <div className="p-[1.6rem]  border border-gray-900 flex flex-col gap-[1.6rem]">

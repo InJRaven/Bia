@@ -10,6 +10,7 @@ export const translations = {
     },
     products: {
       title: ["Break Cue", "Jump Cue", "Billiard Accessories"],
+      price: "From ",
       product: {
         nameCard: "BREACH BREAK GHOST EDITION",
         price: "From 12.000.000 VND",
@@ -95,6 +96,7 @@ export const translations = {
     },
     products: {
       title: ["Cơ Phá", "Cơ Nhảy", "Phụ Kiện"],
+      price: "Từ ",
       product: {
         nameCard: "CƠ PHÁ BREACH BREAK GHOST EDITION",
         price: "Từ 12.000.000đ",

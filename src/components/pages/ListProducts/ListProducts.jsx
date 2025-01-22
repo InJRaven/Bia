@@ -1,101 +1,26 @@
+import { useContext, useEffect, useState } from "react";
+import { AppContext } from "../../../context/AppContext";
 import { Link } from "react-router-dom";
-import Card from "../../ui/Card/Card";
-import productImg from "../../../assets/img/product.png";
-import { useContext } from "react";
-import { TranslationContext } from "../../../context/TranslationContext";
-
 import "./ListProducts.scss";
+import Card from "../../ui/Card/Card";
+
 
 const ListProducts = () => {
-  const { language, t } = useContext(TranslationContext);
-  const product = t("products.product");
+  const { language, t, instance } = useContext(AppContext);
+  const [data, setData] = useState([])
+  useEffect(()=> {
+    const fetchData = async () => {
+      try {
+        const res = await instance.get('products')
+        setData(res.data.data)
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    fetchData()
+  },[language])
+
   const values = t("products.title");
-  const data = [
-    {
-      id: 1,
-      url: productImg,
-      alt: "Card Product",
-      nameCard: product.nameCard,
-      price: product.price,
-    },
-    {
-      id: 2,
-      url: productImg,
-      alt: "Card Product",
-      nameCard: product.nameCard,
-      price: product.price,
-    },
-    {
-      id: 3,
-      url: productImg,
-      alt: "Card Product",
-      nameCard: product.nameCard,
-      price: product.price,
-    },
-    {
-      id: 4,
-      url: productImg,
-      alt: "Card Product",
-      nameCard: product.nameCard,
-      price: product.price,
-    },
-    {
-      id: 5,
-      url: productImg,
-      alt: "Card Product",
-      nameCard: product.nameCard,
-      price: product.price,
-    },
-    {
-      id: 6,
-      url: productImg,
-      alt: "Card Product",
-      nameCard: product.nameCard,
-      price: product.price,
-    },
-    {
-      id: 7,
-      url: productImg,
-      alt: "Card Product",
-      nameCard: product.nameCard,
-      price: product.price,
-    },
-    {
-      id: 8,
-      url: productImg,
-      alt: "Card Product",
-      nameCard: product.nameCard,
-      price: product.price,
-    },
-    {
-      id: 9,
-      url: productImg,
-      alt: "Card Product",
-      nameCard: product.nameCard,
-      price: product.price,
-    },
-    {
-      id: 10,
-      url: productImg,
-      alt: "Card Product",
-      nameCard: product.nameCard,
-      price: product.price,
-    },
-    {
-      id: 11,
-      url: productImg,
-      alt: "Card Product",
-      nameCard: product.nameCard,
-      price: product.price,
-    },
-    {
-      id: 12,
-      url: productImg,
-      alt: "Card Product",
-      nameCard: product.nameCard,
-      price: product.price,
-    },
-  ];
   return (
     <section className="w-full flex flex-col gap-[1.6rem] py-[2rem] products">
       <div className="w-full inline-flex justify-between items-center">
@@ -144,11 +69,10 @@ const ListProducts = () => {
         {data.map((item) => (
           <Link to="/detail" key={item.id}>
             <Card
-              key={item.id}
-              url={item.url}
-              alt={item.alt}
-              nameCard={item.nameCard}
-              price={item.price}
+              url={item.main_image}
+              alt={item.name}
+              nameCard={item.name}
+              price={`${t('products.price')}${item.price}`}
             />
           </Link>
         ))}

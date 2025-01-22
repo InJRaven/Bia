@@ -13,7 +13,7 @@ import img12 from "../../../assets/img/gallery/12.jpg";
 import img13 from "../../../assets/img/gallery/13.jpg";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import { useContext } from "react";
-import { TranslationContext } from "../../../context/TranslationContext";
+import { AppContext } from "../../../context/AppContext";
 
 const Gallery = () => {
   const images = [
@@ -32,7 +32,7 @@ const Gallery = () => {
     img13,
   ];
 
-  const { language } = useContext(TranslationContext);
+  const { language } = useContext(AppContext);
   return (
     <section className="w-full flex flex-col gap-[1.6rem] py-[2rem] gallery">
       <div className="inline-flex gap-[1.6rem] items-stretch w-full">

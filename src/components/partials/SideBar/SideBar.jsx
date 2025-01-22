@@ -1,11 +1,11 @@
+import { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { ChevronRightIcon } from "../../ui/Icon/Icon";
 import "./SideBar.scss";
-import { TranslationContext } from "../../../context/TranslationContext";
-import { useContext } from "react";
+import { AppContext } from "../../../context/AppContext";
 
 const SideBar = () => {
-  const { language } = useContext(TranslationContext);
+  const { language } = useContext(AppContext);
 
   const menuItems = [
     {
