@@ -40,6 +40,7 @@ const Breadcrumb = ({ routes, hidden }) => {
 
     return { breadcrumbs: breadcrumbList, pageTitle: title };
   }, [location.pathname, routes]);
+  
   return (
     <section className="rol-start-2 grid grid-cols-6 gap-[4rem] py-[2rem] bg-gray-200 heading ">
       <nav

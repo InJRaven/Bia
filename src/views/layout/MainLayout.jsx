@@ -5,16 +5,21 @@ import SideBar from "../../components/partials/SideBar/SideBar";
 import Breadcrumb from "../../components/ui/Breadcrumb/Breadcrumb";
 
 import { AppRoutesConfig } from "../../routes/AppRoutes";
+import { useContext } from "react";
+import { AppContext } from "../../context/AppContext";
 
 const MainLayout = () => {
   const location = useLocation();
+  const {t} = useContext(AppContext)
   const isHomePage = location.pathname === "/";
   const hidden =
-    (location.pathname === "/") | (location.pathname === "/service");
+    (location.pathname === "/") || (location.pathname === "/service");
   let hiddenTitle = "";
   if (location.pathname === "/contact" || location.pathname === "/detail") {
     hiddenTitle = "title";
   }
+
+
 
   return (
     <div
@@ -24,7 +29,7 @@ const MainLayout = () => {
     >
       <Header />
       {!hidden && (
-        <Breadcrumb routes={AppRoutesConfig()} hidden={hiddenTitle} />
+        <Breadcrumb routes={AppRoutesConfig(t)} hidden={hiddenTitle} />
       )}
 
       <div className="row-start-3 row-span-1 col-start-1 w-full grid grid-cols-6 gap-[2rem] xs:gap-[1rem] px-[3.2rem] xs:px-[1rem] py-[2rem]">

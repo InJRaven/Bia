@@ -20,18 +20,6 @@ const AppProvider = ({ children }) => {
     localStorage.setItem("language", newLang); // Lưu trạng thái vào localStorage
   };
 
-  useEffect(() => {
-    const test = async () => {
-      try {
-        const res = await instance.get("products?category_id=")
-        console.log(res)
-      } catch (error) {
-        
-      }
-    }
-    test()
-
-  },[])
   const t = useCallback(
     (key) => {
       const keys = key.split(".");
@@ -48,6 +36,18 @@ const AppProvider = ({ children }) => {
     [language]
   );
 
+
+  useEffect(() => {
+    const test = async () => {
+      try {
+        const res = await instance.get('products-by-categories')
+        console.log(res.data)
+      } catch (error) {
+        console.log(error)  
+      }
+    }
+    test()
+  }, [])
   return (
     <AppContext.Provider value={{ language, t, changeLanguage, instance }}>
       {children}

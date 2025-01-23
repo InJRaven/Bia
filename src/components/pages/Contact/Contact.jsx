@@ -1,5 +1,5 @@
 import { FaSquarePhoneFlip } from "react-icons/fa6";
-const Contact = () => {
+const Contact = ({t}) => {
   return (
     <div className="w-full rounded-[0.6rem] h-[50vh] bg-gray-100 flex flex-col items-center justify-center gap-[2.4rem]">
       <div className="flex flex-col items-center justify-center gap-[1.8rem]">

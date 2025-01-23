@@ -22,6 +22,7 @@
     "axios": "^1.7.9",
     "clsx": "^2.1.1",
     "country-flag-icons": "^1.5.14",
+    "dompurify": "^3.2.3",
     "eslint": "^9.17.0",
     "eslint-plugin-react": "^7.37.2",
     "eslint-plugin-react-hooks": "^5.0.0",

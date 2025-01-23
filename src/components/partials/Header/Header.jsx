@@ -28,7 +28,7 @@ const Header = () => {
               <li key={index} className="header__menu--item">
                 <NavLink
                   to={item.to}
-                  className=" hover:text-light transition-all duration-300 text-md xs:text-xs font-medium capitalize p-[0.5rem] header__menu--link"
+                  className=" hover:text-light transition-all duration-300 text-md xs:text-xs font-medium capitalize p-[1rem] header__menu--link"
                 >
                   {item.label}
                 </NavLink>

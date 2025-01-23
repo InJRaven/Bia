@@ -1,12 +1,10 @@
-import { useContext, useEffect, useState } from "react";
-import { AppContext } from "../../../context/AppContext";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./ListProducts.scss";
 import Card from "../../ui/Card/Card";
 
 
-const ListProducts = () => {
-  const { language, t, instance } = useContext(AppContext);
+const ListProducts = ({language, t, instance }) => {
   const [data, setData] = useState([])
   useEffect(()=> {
     const fetchData = async () => {
@@ -19,7 +17,7 @@ const ListProducts = () => {
     }
     fetchData()
   },[language])
-
+  console.log(data)
   const values = t("products.title");
   return (
     <section className="w-full flex flex-col gap-[1.6rem] py-[2rem] products">
